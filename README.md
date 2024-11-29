@@ -20,9 +20,11 @@ A web application built using React.js that calculates and displays rewards poin
 
 The Rewards App is designed to help track customer transactions and calculate rewards points based on product purchases. The main features include:
 
-1. **Transaction Table**: Displays details of transactions, such as transaction ID, customer name, product purchased, price, and reward points.
-2. **Rewards Table**: Shows the total rewards accumulated by each customer and the breakdown by month.
-3. **Dynamic Calculations**: The app dynamically calculates rewards points for customers as new transactions are added.
+1. **User Monthly Rewards Table**: Displays details of User Monthly Rewards, such as Customer ID, customer name, month, year, and reward points.
+
+2. **Transaction Table**: Displays details of transactions, such as transaction ID, customer name, product purchased, price, and reward points.
+3. **Rewards Table**: Shows the total rewards accumulated by each customer and the breakdown by month.
+4. **Dynamic Calculations**: The app dynamically calculates rewards points for customers as new transactions are added.
 
 This project uses modern JavaScript features and React 18 for building the user interface, and integrates with ESLint and Prettier for code linting and formatting.
 
@@ -39,7 +41,8 @@ This project uses modern JavaScript features and React 18 for building the user 
 
 1. **Data Structure**: Transaction data is organized by customer, and each customer has multiple monthly transactions. Reward points are associated with each transaction.
 2. **Calculating Total Rewards**: The total rewards for a customer are calculated by summing the reward points from each transaction.
-3. **Rendering Data**: Data is displayed in two main tables:
+3. **Rendering Data**: Data is displayed in three main tables:
+   - The **User Monthly Rewards Table** lists individual for User Monthly Rewards.
    - The **Transactions Table** lists individual transactions.
    - The **Rewards Table** aggregates the total rewards for each customer.
 4. **Sorting and Filtering**: The tables support sorting by transaction date and filtering by customer or product name.
@@ -89,7 +92,7 @@ Clean and Formatted Code: ESLint and Prettier ensure that the code is clean, con
 ## Installation 
 
 1. Clone the repository:
-git clone https://github.com/your-username/rewards-app.git
+git clone https://github.com/jgwis/rewards-app.git
 cd rewards-app
 
 2. Install dependencies:
@@ -111,10 +114,14 @@ Rewards Table: This table shows the total rewards for each customer, calculated 
 ## Screenshots
 
 1. Main Page - User Monthly Rewards Table
+![image](https://github.com/user-attachments/assets/47ea4040-c6d4-4543-9a36-afcd1432c005)
+
 
 2. Main Page - Transactions Table
+![image](https://github.com/user-attachments/assets/92eab8cf-fa50-46fd-9e79-d0284498d15a)
 
 2. Main Page - Rewards Table
+![image](https://github.com/user-attachments/assets/01ca1e1d-aaf7-4108-9556-6bcd7b8f776a)
 
 ## Errors and Troubleshooting
 
