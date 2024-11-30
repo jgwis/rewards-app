@@ -31,7 +31,7 @@ const TransactionsTable = ({ transactions }) => {
                 <td>{customerName}</td>
                 <td>{new Date(purchaseDate).toLocaleDateString()}</td>
                 <td>{productPurchased}</td>
-                <td>${price}</td>
+                <td>${price.toFixed(1)}</td>
                 <td>{rewardPoints}</td>
               </tr>
             ),

@@ -13,6 +13,7 @@ module.exports = {
     browser: true,
     node: true,
     es2021: true,
+    jest: true,
   },
   extends: [
     'eslint:recommended', // Recommended ESLint rules
@@ -20,7 +21,7 @@ module.exports = {
     'plugin:prettier/recommended', // Prettier plugin integration
   ],
 
-  plugins: ['react', 'prettier', 'jsx'],
+  plugins: ['react', 'prettier', 'jsx', 'jest'],
   settings: {
     react: {
       version: 'detect', // Automatically detects the React version
@@ -29,5 +30,8 @@ module.exports = {
   rules: {
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
+    'jest/no-disabled-tests': 'warn',
+    'jest/no-focused-tests': 'error',
+    'jest/no-duplicate-hooks': 'error',
   },
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UserRewardsTable = ({ rewards }) => {
+const UserMonthlyRewardsTable = ({ rewards }) => {
   // Simplified sorting logic by month-year
   const sortedRewards = Object.entries(rewards)
     .map(([customerName, customerData]) => {
@@ -64,8 +64,8 @@ const UserRewardsTable = ({ rewards }) => {
   );
 };
 
-UserRewardsTable.propTypes = {
+UserMonthlyRewardsTable.propTypes = {
   rewards: PropTypes.object.isRequired,
 };
 
-export default UserRewardsTable;
+export default UserMonthlyRewardsTable;

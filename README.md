@@ -12,6 +12,7 @@ A web application built using React.js that calculates and displays rewards poin
 - [Installation](#installation)
 - [Usage](#usage)
 - [Screenshots](#screenshots)
+- [Testing](#Test)
 - [Errors and Troubleshooting](#errors-and-troubleshooting)
 - [Contributing](#contributing)
 - [License](#license)
@@ -20,9 +21,11 @@ A web application built using React.js that calculates and displays rewards poin
 
 The Rewards App is designed to help track customer transactions and calculate rewards points based on product purchases. The main features include:
 
-1. **Transaction Table**: Displays details of transactions, such as transaction ID, customer name, product purchased, price, and reward points.
-2. **Rewards Table**: Shows the total rewards accumulated by each customer and the breakdown by month.
-3. **Dynamic Calculations**: The app dynamically calculates rewards points for customers as new transactions are added.
+1. **User Monthly Rewards Table**: Displays details of User Monthly Rewards, such as Customer ID, customer name, month, year, and reward points.
+
+2. **Transaction Table**: Displays details of transactions, such as transaction ID, customer name, product purchased, price, and reward points.
+3. **Rewards Table**: Shows the total rewards accumulated by each customer and the breakdown by month.
+4. **Dynamic Calculations**: The app dynamically calculates rewards points for customers as new transactions are added.
 
 This project uses modern JavaScript features and React 18 for building the user interface, and integrates with ESLint and Prettier for code linting and formatting.
 
@@ -39,7 +42,8 @@ This project uses modern JavaScript features and React 18 for building the user 
 
 1. **Data Structure**: Transaction data is organized by customer, and each customer has multiple monthly transactions. Reward points are associated with each transaction.
 2. **Calculating Total Rewards**: The total rewards for a customer are calculated by summing the reward points from each transaction.
-3. **Rendering Data**: Data is displayed in two main tables:
+3. **Rendering Data**: Data is displayed in three main tables:
+   - The **User Monthly Rewards Table** lists individual for User Monthly Rewards.
    - The **Transactions Table** lists individual transactions.
    - The **Rewards Table** aggregates the total rewards for each customer.
 4. **Sorting and Filtering**: The tables support sorting by transaction date and filtering by customer or product name.
@@ -53,16 +57,21 @@ rewards-app/
 │   └── ...                 # Static files (images, icons, etc.)
 ├── src/
 │   ├── components/         # React components like Tables and Loader
-│   │   ├── UserRewardsTable.js  # Table displaying User Monthly Rewards
+│   │   ├── UserMonthlyRewardsTable.js  # Table displaying User Monthly Rewards
 │   │   ├── TransactionsTable.js  # Table displaying transactions
 │   │   ├── TotalRewardsTable.js # Table displaying rewards summary
 │   │   └── Loader.js            # Loading Loader component
+│   ├── /__tests__
+│   │   ├── UserMonthlyRewardsTable.test.js
+│   │   ├── TransactionsTable.test.js
+│   │   ├── TotalRewardsTable.test.js
 │   ├── utils/              # Utility functions
 │   │   └── calculateRewardPoints.js # Function to calculate rewards
 │   │   └── aggregateRewards.js # Function to calculate rewards Monthly/Yearly
 │   │   └── data.js             # Custom json data
 │   ├── App.js              # Main component rendering the app structure
 │   ├── index.js            # Entry point for React application
+│   ├── setupTests.js       # For Test
 │   └── index.css           # Global styles
 ├── .eslintrc.js            # ESLint configuration
 ├── babel.config.js         # Babel configuration
@@ -70,13 +79,14 @@ rewards-app/
 └── README.md               # This README file
 
 ## Key Components
-
+src/index.js: Entry point of the React application.
 src/App.js: Main component where the structure of the app is defined. It includes the User Monthly Rewards Table, Transactions Table and Total Rewards Table.
-src/components/UserRewardsTable.js: Displays a table of User Monthly Rewards.
+src/components/UserMonthlyRewardsTable.js: Component to display user monthly rewards.
 src/components/TransactionsTable.js: Displays a table of individual transactions with relevant details.
 src/components/TotalRewardsTable.js: Displays the total rewards points for each customer and aggregates monthly data.
 src/utils/calculateRewardPoints.js: A utility function to calculate the total rewards points for a customer based on their monthly transactions.
 src/utils/aggregateRewards.js: A utility function to logic the total rewards points for a customer based on their monthly/yearly transactions.
+setupTests.js: Jest setup for running tests with React Testing Library.
 
 ## Features
 
@@ -89,7 +99,7 @@ Clean and Formatted Code: ESLint and Prettier ensure that the code is clean, con
 ## Installation 
 
 1. Clone the repository:
-git clone https://github.com/your-username/rewards-app.git
+git clone https://github.com/jgwis/rewards-app.git
 cd rewards-app
 
 2. Install dependencies:
@@ -115,6 +125,12 @@ Rewards Table: This table shows the total rewards for each customer, calculated 
 2. Main Page - Transactions Table
 
 2. Main Page - Rewards Table
+
+## Testing
+This project includes unit tests for each component using Jest and React Testing Library.
+Running Tests
+To run the tests, execute the following command in the terminal:
+npm test
 
 ## Errors and Troubleshooting
 

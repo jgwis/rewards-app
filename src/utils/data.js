@@ -5,7 +5,7 @@ export const transactionsData = [
     customerName: 'John Doe',
     purchaseDate: '2023-12-15',
     productPurchased: 'Laptop',
-    price: 120,
+    price: 120.4,
   },
   {
     customerId: 67890,
@@ -45,6 +45,6 @@ export const transactionsData = [
     customerName: 'Jane Smith',
     purchaseDate: '2024-02-10',
     productPurchased: 'Keyboard',
-    price: 120,
+    price: 100.2,
   },
 ];

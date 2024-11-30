@@ -1,4 +1,3 @@
-// Function to calculate reward points based on purchase price
 export const calculateRewardPoints = (price) => {
   let points = 0;
   if (price > 100) {
@@ -8,5 +7,5 @@ export const calculateRewardPoints = (price) => {
   if (price > 50) {
     points += price - 50; // 1 point for every dollar between $50 and $100
   }
-  return points;
+  return Math.floor(points);
 };

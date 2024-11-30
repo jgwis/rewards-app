@@ -6,7 +6,6 @@ export const aggregateRewards = (transactions) => {
   transactions.forEach((transaction) => {
     const { customerId, customerName, purchaseDate, price } = transaction;
     const rewardPoints = calculateRewardPoints(price);
-
     const monthYear = new Date(purchaseDate).toLocaleString('default', {
       month: 'long',
       year: 'numeric',

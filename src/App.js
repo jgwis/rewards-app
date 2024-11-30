@@ -4,7 +4,7 @@ import {
   calculateTotalRewards,
 } from './utils/aggregateRewards';
 import { transactionsData } from './utils/data';
-import UserRewardsTable from './components/UserRewardsTable';
+import UserMonthlyRewardsTable from './components/UserMonthlyRewardsTable';
 import TotalRewardsTable from './components/TotalRewardsTable';
 import TransactionsTable from './components/TransactionsTable';
 import { calculateRewardPoints } from './utils/calculateRewardPoints';
@@ -52,7 +52,7 @@ const App = () => {
         <Loader />
       ) : (
         <>
-          <UserRewardsTable rewards={rewardsByMonth} />
+          <UserMonthlyRewardsTable rewards={rewardsByMonth} />
           <TransactionsTable transactions={transactions} />
           <TotalRewardsTable totalRewards={totalRewards} />
         </>
