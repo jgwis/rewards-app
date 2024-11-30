@@ -121,10 +121,14 @@ Rewards Table: This table shows the total rewards for each customer, calculated 
 ## Screenshots
 
 1. Main Page - User Monthly Rewards Table
+![image](https://github.com/user-attachments/assets/47ea4040-c6d4-4543-9a36-afcd1432c005)
+
 
 2. Main Page - Transactions Table
+![image](https://github.com/user-attachments/assets/92eab8cf-fa50-46fd-9e79-d0284498d15a)
 
 2. Main Page - Rewards Table
+![image](https://github.com/user-attachments/assets/01ca1e1d-aaf7-4108-9556-6bcd7b8f776a)
 
 ## Testing
 This project includes unit tests for each component using Jest and React Testing Library.
