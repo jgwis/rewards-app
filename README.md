@@ -12,7 +12,7 @@ A web application built using React.js that calculates and displays rewards poin
 - [Installation](#installation)
 - [Usage](#usage)
 - [Screenshots](#screenshots)
-- [Testing](#Test)
+- [Testing](#Testing)
 - [Errors and Troubleshooting](#errors-and-troubleshooting)
 - [Contributing](#contributing)
 - [License](#license)
