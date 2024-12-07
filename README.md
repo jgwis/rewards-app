@@ -21,10 +21,10 @@ A web application built using React.js that calculates and displays rewards poin
 
 The Rewards App is designed to help track customer transactions and calculate rewards points based on product purchases. The main features include:
 
-1. **User Monthly Rewards Table**: Displays details of User Monthly Rewards, such as Customer ID, customer name, month, year, and reward points.
+1. **All Transactions**: Displays details of transactions, such as transaction ID, customer name, product purchased, price, and reward points.
+2. **Total Monthly Rewards (Customer Wise)**: Displays details of User Monthly Rewards, such as Customer ID, customer name, month, year, and reward points.
 
-2. **Transaction Table**: Displays details of transactions, such as transaction ID, customer name, product purchased, price, and reward points.
-3. **Rewards Table**: Shows the total rewards accumulated by each customer and the breakdown by month.
+3. **Total Rewards for Last Three Consecutive Months**: Shows the total rewards accumulated by each customer and the breakdown by month.
 4. **Dynamic Calculations**: The app dynamically calculates rewards points for customers as new transactions are added.
 
 This project uses modern JavaScript features and React 18 for building the user interface, and integrates with ESLint and Prettier for code linting and formatting.
@@ -43,8 +43,8 @@ This project uses modern JavaScript features and React 18 for building the user 
 1. **Data Structure**: Transaction data is organized by customer, and each customer has multiple monthly transactions. Reward points are associated with each transaction.
 2. **Calculating Total Rewards**: The total rewards for a customer are calculated by summing the reward points from each transaction.
 3. **Rendering Data**: Data is displayed in three main tables:
-   - The **User Monthly Rewards Table** lists individual for User Monthly Rewards.
    - The **Transactions Table** lists individual transactions.
+   - The **User Monthly Rewards Table** lists individual for User Monthly Rewards.
    - The **Rewards Table** aggregates the total rewards for each customer.
 4. **Sorting and Filtering**: The tables support sorting by transaction date and filtering by Year and Month.
 
@@ -124,14 +124,14 @@ Rewards Table: This table shows the total rewards for each customer, calculated 
 
 ## Screenshots
 
-1. Main Page - User Monthly Rewards Table
-![image](https://github.com/user-attachments/assets/c1eaf2cf-c2c8-46d5-8fec-8b39422179c7)
+1. Main Page - All Transactions
+![image](https://github.com/user-attachments/assets/34a1c54a-0953-4a2d-b50a-bae0b2d8d6d8)
 
-2. Main Page - Transactions Table
-![image](https://github.com/user-attachments/assets/2b6bdc13-556f-41cc-b303-70b9beaed936)
+2. Main Page - Total Monthly Rewards (Customer Wise)
+![image](https://github.com/user-attachments/assets/4c0e69ad-c893-4134-9ede-8b71683decf3)
 
-2. Main Page - Rewards Table
-![image](https://github.com/user-attachments/assets/ff300fad-5396-4857-9722-57fd4736b701)
+3. Main Page - Total Rewards for Last Three Consecutive Months
+ ![image](https://github.com/user-attachments/assets/e29cb6a5-7e6d-4f90-9bf3-c99a94ab60f4)
 
 ## Testing
 This project includes unit tests for each component using Jest and React Testing Library.
