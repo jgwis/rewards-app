@@ -39,6 +39,13 @@ h1 {
   font-size: 18px;
 }
 
+.error-message {
+  border: 1px solid #df9898;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+  margin-top: 20px;
+}
 
 /*Loader*/
 

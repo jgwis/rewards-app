@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TransactionsTable = ({ transactions }) => {
+const AllTransactions = ({ transactions }) => {
+  transactions.sort(
+    (a, b) => new Date(b.purchaseDate) - new Date(a.purchaseDate),
+  );
   return (
     <div className="transactions">
-      <h3>Transactions</h3>
+      <h3>All Transactions</h3>
       <table className="table">
         <thead>
           <tr>
@@ -31,7 +34,7 @@ const TransactionsTable = ({ transactions }) => {
                 <td>{customerName}</td>
                 <td>{new Date(purchaseDate).toLocaleDateString()}</td>
                 <td>{productPurchased}</td>
-                <td>${price.toFixed(1)}</td>
+                <td>${price}</td>
                 <td>{rewardPoints}</td>
               </tr>
             ),
@@ -42,8 +45,8 @@ const TransactionsTable = ({ transactions }) => {
   );
 };
 
-TransactionsTable.propTypes = {
+AllTransactions.propTypes = {
   transactions: PropTypes.array.isRequired,
 };
 
-export default TransactionsTable;
+export default AllTransactions;

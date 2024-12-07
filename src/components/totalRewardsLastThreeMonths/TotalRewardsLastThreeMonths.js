@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-const TotalRewardsTable = ({ totalRewards }) => {
+const TotalRewardsLastThreeMonths = ({ totalRewards }) => {
   return (
     <div className="total-rewards">
-      <h3>Total Rewards</h3>
+      <h3>Total Rewards for Last Three Consecutive Months</h3>
       <table className="table">
         <thead>
           <tr>
@@ -25,8 +24,8 @@ const TotalRewardsTable = ({ totalRewards }) => {
   );
 };
 
-TotalRewardsTable.propTypes = {
+TotalRewardsLastThreeMonths.propTypes = {
   totalRewards: PropTypes.object.isRequired,
 };
 
-export default TotalRewardsTable;
+export default TotalRewardsLastThreeMonths;
