@@ -127,8 +127,8 @@ Rewards Table: This table shows the total rewards for each customer, calculated 
 1. Main Page - All Transactions
 ![image](https://github.com/user-attachments/assets/d842d981-f622-4188-94a1-503f91ee6723)
 
-
 2. Main Page - Total Monthly Rewards (Customer Wise)
+
 ![image](https://github.com/user-attachments/assets/6c17c1c0-62bb-4766-b295-2cf267d01d17)
 
 
