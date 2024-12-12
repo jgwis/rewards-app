@@ -8,15 +8,19 @@ const App = ({ loading, transactions, rewardsByMonth, totalRewards }) => {
   if (loading) {
     return <Loader />;
   }
-  return (
-    <>
-      <AllTransactions transactions={transactions} />
-      {rewardsByMonth && (
-        <TotalMonthlyRewards rewardsByMonth={rewardsByMonth} />
-      )}
 
-      <TotalRewardsLastThreeMonths totalRewards={totalRewards} />
-    </>
+  return (
+    <div className="container-fluid py-4">
+      <div className="row">
+        <div className="col-md-7">
+          <AllTransactions transactions={transactions} />
+        </div>
+        <div className="col-md-5">
+          <TotalMonthlyRewards rewardsByMonth={rewardsByMonth} />
+          <TotalRewardsLastThreeMonths totalRewards={totalRewards} />
+        </div>
+      </div>
+    </div>
   );
 };
 

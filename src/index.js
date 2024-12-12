@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import AppDriver from './AppDriver';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import AppDriver from './screens/AppDriver/AppDriver';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

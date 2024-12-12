@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import {
   aggregateRewards,
   calculateTotalRewards,
-} from './utils/aggregateRewards';
-import { transactionsData } from './json/jsondata';
-import { calculateRewardPoints } from './utils/calculateRewardPoints';
-import App from './App';
-import logger from './utils/logger';
+} from '../utils/aggregateRewards';
+import { transactionsData } from '../json/jsondata';
+import { calculateRewardPoints } from '../utils/calculateRewardPoints';
+import logger from '../utils/logger';
 
-const AppDriver = () => {
+const useFetchRewardsData = () => {
   const [transactions, setTransactions] = useState([]);
   const [rewardsByMonth, setRewardsByMonth] = useState({});
   const [totalRewards, setTotalRewards] = useState({});
@@ -24,17 +23,20 @@ const AppDriver = () => {
         if (!transactionsData || transactionsData.length === 0) {
           throw new Error('No transaction data available');
         }
-        // Fetching and calculating reward points for each transaction
+
+        // Calculate reward points for each transaction
         const updatedTransactions = transactionsData.map((transaction) => ({
           ...transaction,
           rewardPoints: calculateRewardPoints(transaction.price),
         }));
 
         setTransactions(updatedTransactions);
+
         // Aggregate rewards by month
         const rewards = aggregateRewards(updatedTransactions);
         setRewardsByMonth(rewards);
-        // Calculate total rewards for each customer
+
+        // Calculate total rewards
         const total = calculateTotalRewards(rewards);
         setTotalRewards(total);
       } catch (error) {
@@ -48,25 +50,7 @@ const AppDriver = () => {
     fetchData();
   }, []);
 
-  return (
-    <div className="customer-rewards-program">
-      <h1>Customer Rewards Program</h1>
-      {/* Displaying error message if there's an error */}
-      {error ? (
-        <div className="error-message">
-          <strong>Error:</strong> {error}
-        </div>
-      ) : (
-        // Display the main app content if no error
-        <App
-          loading={loading}
-          transactions={transactions}
-          rewardsByMonth={rewardsByMonth}
-          totalRewards={totalRewards}
-        />
-      )}
-    </div>
-  );
+  return { transactions, rewardsByMonth, totalRewards, loading, error };
 };
 
-export default AppDriver;
+export default useFetchRewardsData;
