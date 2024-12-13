@@ -54,23 +54,24 @@ rewards-app/
 ├── node_modules/           # Node.js dependencies
 ├── public/
 │   ├── index.html          # Main HTML file
+│   ├── data/
+│   │   ├── rewards.json
 │   └── ...                 # Static files (images, icons, etc.)
 ├── src/
 │   ├── components/         # React components like Tables and Loader
 │   │   ├── TotalMonthlyRewards.js  # Table displaying User Monthly Rewards
 │   │   ├── AllTransactions.js  # Table displaying transactions
 │   │   ├── TotalRewardsLastThreeMonths.js # Table displaying rewards summary
-│   ├── loader
 │   │   ├── Loader.js       # Loading Loader component
+│   │   ├── Header.js       # Header component
 │   ├── /__tests__
 │   │   ├── TotalMonthlyRewards.test.js
 │   │   ├── AllTransactions.test.js
 │   │   ├── TotalRewardsLastThreeMonths.test.js
-│   ├── json/
-│   │   ├── jsondata.js
 │   ├── utils/              # Utility functions
 │   │   └── calculateRewardPoints.js # Function to calculate rewards
-│   │   └── aggregateRewards.js # Function to calculate rewards Monthly/Yearly
+│   │   └── calculateTotalMonthlyRewards.js # Function to calculate rewards Monthly/Yearly
+│   │   └── calculateTotalRewards.js # Function to calculate TotalRewards for last three consecutive months for each customer.
 │   │   └── logger.js       # show error log
 │   ├── App.js              # Main component rendering the app structure
 │   ├── AppDriver.js        # calling all other components into it.
@@ -125,15 +126,15 @@ Rewards Table: This table shows the total rewards for each customer, calculated 
 ## Screenshots
 
 1. Main Page - All Transactions
-![image](https://github.com/user-attachments/assets/d842d981-f622-4188-94a1-503f91ee6723)
+![image](https://github.com/user-attachments/assets/0bce2f8c-83bc-46ad-b968-6ec6239cfe29)
+
 
 2. Main Page - Total Monthly Rewards (Customer Wise)
 
-![image](https://github.com/user-attachments/assets/6c17c1c0-62bb-4766-b295-2cf267d01d17)
-
+![image](https://github.com/user-attachments/assets/42aafa9e-9a50-4434-b969-1821741e996f)
 
 3. Main Page - Total Rewards for Last Three Consecutive Months
- ![image](https://github.com/user-attachments/assets/11a865ef-a028-4be2-88d8-6f94372aee97)
+![image](https://github.com/user-attachments/assets/18d5ae34-44f1-4b55-9f0d-10ab4b98ce57)
 
 
 ## Testing
