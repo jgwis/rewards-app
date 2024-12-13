@@ -1,0 +1,183 @@
+[
+  {
+    "customerId": 12345,
+    "transactionId": 1001,
+    "customerName": "John Doe",
+    "purchaseDate": "2024-12-10",
+    "productPurchased": "Laptop",
+    "price": 120.4
+  },
+  
+  {
+    "customerId": 12345,
+    "transactionId": 1003,
+    "customerName": "John Doe",
+    "purchaseDate": "2024-12-05",
+    "productPurchased": "Tablet",
+    "price": 75
+  },
+  {
+    "customerId": 12345,
+    "transactionId": 1103,
+    "customerName": "John Doe",
+    "purchaseDate": "2024-12-08",
+    "productPurchased": "Tablet",
+    "price": 40
+  },
+  {
+    "customerId": 12345,
+    "transactionId": 1104,
+    "customerName": "John Doe",
+    "purchaseDate": "2024-11-25",
+    "productPurchased": "Phone",
+    "price": 200
+  },
+  {
+    "customerId": 12345,
+    "transactionId": 1013,
+    "customerName": "John Doe",
+    "purchaseDate": "2024-11-20",
+    "productPurchased": "Smart Watch",
+    "price": 200
+  },
+  {
+    "customerId": 12346,
+    "transactionId": 1026,
+    "customerName": "Bob Brown",
+    "purchaseDate": "2024-10-25",
+    "productPurchased": "Tablet",
+    "price": 120
+  },
+  {
+    "customerId": 12346,
+    "transactionId": 1006,
+    "customerName": "Bob Brown",
+    "purchaseDate": "2024-10-20",
+    "productPurchased": "Tablet",
+    "price": 120.55
+  },
+  {
+    "customerId": 12346,
+    "transactionId": 1200,
+    "customerName": "Bob Brown",
+    "purchaseDate": "2024-01-20",
+    "productPurchased": "Tablet",
+    "price": 120.99
+  },
+  {
+    "customerId": 12346,
+    "transactionId": 1012,
+    "customerName": "Bob Brown",
+    "purchaseDate": "2024-09-05",
+    "productPurchased": "Router",
+    "price": 80
+  },
+  {
+    "customerId": 12346,
+    "transactionId": 1034,
+    "customerName": "Bob Brown",
+    "purchaseDate": "2024-06-30",
+    "productPurchased": "Bluetooth Mouse",
+    "price": 30
+  },
+  {
+    "customerId": 67890,
+    "transactionId": 1002,
+    "customerName": "Jane Smith",
+    "purchaseDate": "2024-12-10",
+    "productPurchased": "Phone",
+    "price": 50
+  },
+  {
+    "customerId": 67890,
+    "transactionId": 1004,
+    "customerName": "Jane Smith",
+    "purchaseDate": "2024-12-06",
+    "productPurchased": "Headphones",
+    "price": 90
+  },
+  {
+    "customerId": 67890,
+    "transactionId": 1007,
+    "customerName": "Jane Smith",
+    "purchaseDate": "2024-10-25",
+    "productPurchased": "Keyboard",
+    "price": 100.2
+  },
+  {
+    "customerId": 67890,
+    "transactionId": 1010,
+    "customerName": "Jane Smith",
+    "purchaseDate": "2024-10-10",
+    "productPurchased": "Desk Chair",
+    "price": 150
+  },
+  {
+    "customerId": 67890,
+    "transactionId": 1033,
+    "customerName": "Jane Smith",
+    "purchaseDate": "2023-12-22",
+    "productPurchased": "Phone Stand",
+    "price": 20
+  },
+   
+  {
+    "customerId": 12348,
+    "transactionId": 1011,
+    "customerName": "Michael Scott",
+    "purchaseDate": "2023-08-10",
+    "productPurchased": "Printer",
+    "price": 250
+  },
+  
+  {
+    "customerId": 67892,
+    "transactionId": 1028,
+    "customerName": "Chris Green",
+    "purchaseDate": "2024-04-15",
+    "productPurchased": "Portable Speaker",
+    "price": 75.75
+  },
+  {
+    "customerId": 12348,
+    "transactionId": 1030,
+    "customerName": "Michael Scott",
+    "purchaseDate": "2022-12-20",
+    "productPurchased": "Blender",
+    "price": 120
+  },
+  
+  {
+    "customerId": 12345,
+    "transactionId": 1032,
+    "customerName": "John Doe",
+    "purchaseDate": "2023-05-03",
+    "productPurchased": "Electric Kettle",
+    "price": 45
+  },
+ 
+  {
+    "customerId": 67892,
+    "transactionId": 1036,
+    "customerName": "Chris Green",
+    "purchaseDate": "2024-09-07",
+    "productPurchased": "Smartphone",
+    "price": 900
+  },
+  {
+    "customerId": 67892,
+    "transactionId": 1037,
+    "customerName": "Chris Green",
+    "purchaseDate": "2024-11-25",
+    "productPurchased": "Electric Heater",
+    "price": 180
+  },
+  {
+    "customerId": 67892,
+    "transactionId": 1038,
+    "customerName": "Chris Green",
+    "purchaseDate": "2024-10-10",
+    "productPurchased": "Keyboard",
+    "price": 50
+  }
+]

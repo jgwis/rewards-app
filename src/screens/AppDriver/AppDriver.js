@@ -1,7 +1,7 @@
 import React from 'react';
 import useFetchRewardsData from '../../hooks/useFetchRewardsData';
 import App from '../../App';
-import Header from '../../components/header/Header';
+import Header from '../../components/Header';
 
 const AppDriver = () => {
   const { transactions, rewardsByMonth, totalRewards, loading, error } =

@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
-import {
-  aggregateRewards,
-  calculateTotalRewards,
-} from '../utils/aggregateRewards';
-import { transactionsData } from '../json/jsondata';
 import { calculateRewardPoints } from '../utils/calculateRewardPoints';
 import logger from '../utils/logger';
+import { calculateTotalRewards } from '../utils/calculateTotalRewards';
+import { fetchTransitionsData } from '../services/dataService';
+import { calculateTotalMonthlyRewards } from '../utils/calculateTotalMonthlyRewards';
 
 const useFetchRewardsData = () => {
-  const [transactions, setTransactions] = useState([]);
-  const [rewardsByMonth, setRewardsByMonth] = useState({});
-  const [totalRewards, setTotalRewards] = useState({});
+  const [data, setData] = useState({
+    transactions: [],
+    rewardsByMonth: [],
+    totalRewards: [],
+  });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -20,25 +20,28 @@ const useFetchRewardsData = () => {
       setError(null);
 
       try {
+        const transactionsData = await fetchTransitionsData();
         if (!transactionsData || transactionsData.length === 0) {
           throw new Error('No transaction data available');
         }
+        const updatedTransactions = transactionsData
+          .map((transaction) => ({
+            ...transaction,
+            rewardPoints: calculateRewardPoints(transaction.price),
+          }))
+          .sort((a, b) => {
+            const dateA = new Date(a.purchaseDate);
+            const dateB = new Date(b.purchaseDate);
+            return dateB - dateA;
+          });
 
-        // Calculate reward points for each transaction
-        const updatedTransactions = transactionsData.map((transaction) => ({
-          ...transaction,
-          rewardPoints: calculateRewardPoints(transaction.price),
-        }));
-
-        setTransactions(updatedTransactions);
-
-        // Aggregate rewards by month
-        const rewards = aggregateRewards(updatedTransactions);
-        setRewardsByMonth(rewards);
-
-        // Calculate total rewards
+        const rewards = calculateTotalMonthlyRewards(updatedTransactions);
         const total = calculateTotalRewards(rewards);
-        setTotalRewards(total);
+        setData({
+          transactions: updatedTransactions,
+          rewardsByMonth: rewards,
+          totalRewards: total,
+        });
       } catch (error) {
         logger.error(`Error during data fetch: ${error.message}`);
         setError(error.message);
@@ -50,7 +53,7 @@ const useFetchRewardsData = () => {
     fetchData();
   }, []);
 
-  return { transactions, rewardsByMonth, totalRewards, loading, error };
+  return { ...data, loading, error };
 };
 
 export default useFetchRewardsData;

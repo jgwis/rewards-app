@@ -1,8 +1,80 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import AllTransactions from '../components/allTransactions/AllTransactions';
+import AllTransactions from '../components/AllTransactions';
 
 const mockTransactions = [
+  {
+    customerId: 12345,
+    transactionId: 1001,
+    customerName: 'John Doe',
+    purchaseDate: '2024-12-10',
+    productPurchased: 'Laptop',
+    price: 120.4,
+    rewardPoints: 90,
+  },
+  {
+    customerId: 67890,
+    transactionId: 1002,
+    customerName: 'Jane Smith',
+    purchaseDate: '2024-12-10',
+    productPurchased: 'Phone',
+    price: 50,
+    rewardPoints: 0,
+  },
+  {
+    customerId: 12345,
+    transactionId: 1103,
+    customerName: 'John Doe',
+    purchaseDate: '2024-12-08',
+    productPurchased: 'Tablet',
+    price: 40,
+    rewardPoints: 0,
+  },
+  {
+    customerId: 67890,
+    transactionId: 1004,
+    customerName: 'Jane Smith',
+    purchaseDate: '2024-12-06',
+    productPurchased: 'Headphones',
+    price: 90,
+    rewardPoints: 40,
+  },
+  {
+    customerId: 12345,
+    transactionId: 1003,
+    customerName: 'John Doe',
+    purchaseDate: '2024-12-05',
+    productPurchased: 'Tablet',
+    price: 75,
+    rewardPoints: 25,
+  },
+  {
+    customerId: 12345,
+    transactionId: 1104,
+    customerName: 'John Doe',
+    purchaseDate: '2024-11-25',
+    productPurchased: 'Phone',
+    price: 200,
+    rewardPoints: 250,
+  },
+  {
+    customerId: 67892,
+    transactionId: 1037,
+    customerName: 'Chris Green',
+    purchaseDate: '2024-11-25',
+    productPurchased: 'Electric Heater',
+    price: 180,
+    rewardPoints: 210,
+  },
+  {
+    customerId: 12345,
+    transactionId: 1013,
+    customerName: 'John Doe',
+    purchaseDate: '2024-11-20',
+    productPurchased: 'Smart Watch',
+    price: 200,
+    rewardPoints: 250,
+  },
   {
     customerId: 12346,
     transactionId: 1026,
@@ -13,85 +85,13 @@ const mockTransactions = [
     rewardPoints: 90,
   },
   {
-    customerId: 12340,
-    transactionId: 1006,
-    customerName: 'Bob Brown',
-    purchaseDate: '2024-10-20',
-    productPurchased: 'Tablet',
-    price: 120.55,
-    rewardPoints: 91,
-  },
-  {
-    customerId: 12341,
-    transactionId: 1506,
-    customerName: 'Bob Brown',
-    purchaseDate: '2024-10-10',
-    productPurchased: 'Tablet',
-    price: 9999999,
-    rewardPoints: 199999848,
-  },
-  {
-    customerId: 12346,
-    transactionId: 1012,
-    customerName: 'Bob Brown',
-    purchaseDate: '2024-09-05',
-    productPurchased: 'Router',
-    price: 80,
-    rewardPoints: 30,
-  },
-  {
-    customerId: 12346,
-    transactionId: 1034,
-    customerName: 'Bob Brown',
-    purchaseDate: '2024-06-30',
-    productPurchased: 'Bluetooth Mouse',
-    price: 30,
-    rewardPoints: 0,
-  },
-  {
-    customerId: 12352,
-    transactionId: 1041,
-    customerName: 'Mia Lee',
-    purchaseDate: '2024-05-12',
-    productPurchased: 'Tablet',
-    price: 400,
-    rewardPoints: 650,
-  },
-  {
-    customerId: 67892,
-    transactionId: 1028,
-    customerName: 'Chris Green',
-    purchaseDate: '2024-04-15',
-    productPurchased: 'Portable Speaker',
-    price: 75.75,
-    rewardPoints: 25,
-  },
-  {
-    customerId: 67891,
-    transactionId: 1005,
-    customerName: 'Alice Johnson',
-    purchaseDate: '2024-02-10',
-    productPurchased: 'Mouse',
-    price: 30,
-    rewardPoints: 0,
-  },
-  {
-    customerId: 67893,
-    transactionId: 1038,
-    customerName: 'David Clark',
-    purchaseDate: '2024-02-10',
+    customerId: 67890,
+    transactionId: 1007,
+    customerName: 'Jane Smith',
+    purchaseDate: '2024-10-25',
     productPurchased: 'Keyboard',
-    price: 50,
-    rewardPoints: 0,
-  },
-  {
-    customerId: 10349,
-    transactionId: 1200,
-    customerName: 'Bob Brown',
-    purchaseDate: '2024-01-20',
-    productPurchased: 'Tablet',
-    price: 120.99,
-    rewardPoints: 91,
+    price: 100.2,
+    rewardPoints: 50,
   },
 ];
 
@@ -110,19 +110,19 @@ test('renders transactions table with data', () => {
       screen.getByTestId(`id-${transaction.transactionId}`),
     ).toBeInTheDocument();
     expect(
-      screen.getByTestId(`customerName-${transaction.transactionId}`),
+      screen.getByTestId(`name-${transaction.transactionId}`),
     ).toBeInTheDocument();
     expect(
-      screen.getByTestId(`purchaseDate-${transaction.transactionId}`),
+      screen.getByTestId(`date-${transaction.transactionId}`),
     ).toBeInTheDocument();
     expect(
-      screen.getByTestId(`productPurchased-${transaction.transactionId}`),
+      screen.getByTestId(`pname-${transaction.transactionId}`),
     ).toBeInTheDocument();
     expect(
       screen.getByTestId(`price-${transaction.transactionId}`),
     ).toBeInTheDocument();
     expect(
-      screen.getByTestId(`rewardPoints-${transaction.transactionId}`),
+      screen.getByTestId(`points-${transaction.transactionId}`),
     ).toBeInTheDocument();
   });
 });
@@ -146,7 +146,7 @@ test('handles large numbers correctly', () => {
     screen.getByTestId(`price-${largeTransaction.transactionId}`),
   ).toBeInTheDocument();
   expect(
-    screen.getByTestId(`rewardPoints-${largeTransaction.transactionId}`),
+    screen.getByTestId(`points-${largeTransaction.transactionId}`),
   ).toBeInTheDocument();
 });
 

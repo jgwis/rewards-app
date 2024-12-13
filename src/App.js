@@ -1,14 +1,13 @@
 import React from 'react';
-import Loader from './components/loader/Loader';
-import AllTransactions from './components/allTransactions/AllTransactions';
-import TotalMonthlyRewards from './components/totalMonthlyRewards/TotalMonthlyRewards';
-import TotalRewardsLastThreeMonths from './components/totalRewardsLastThreeMonths/TotalRewardsLastThreeMonths';
-
+import Loader from './components/Loader';
+import AllTransactions from './components/AllTransactions';
+import TotalMonthlyRewards from './components/TotalMonthlyRewards';
+import TotalRewardsLastThreeMonths from './components/TotalRewardsLastThreeMonths';
+import PropTypes from 'prop-types';
 const App = ({ loading, transactions, rewardsByMonth, totalRewards }) => {
   if (loading) {
     return <Loader />;
   }
-
   return (
     <div className="container-fluid py-4">
       <div className="row">
@@ -24,4 +23,11 @@ const App = ({ loading, transactions, rewardsByMonth, totalRewards }) => {
   );
 };
 
+// PropTypes validation
+App.propTypes = {
+  loading: PropTypes.bool.isRequired,
+  transactions: PropTypes.array.isRequired,
+  rewardsByMonth: PropTypes.array.isRequired,
+  totalRewards: PropTypes.array.isRequired,
+};
 export default App;

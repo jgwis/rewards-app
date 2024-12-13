@@ -1,14 +1,14 @@
 export const calculateRewardPoints = (price) => {
-  if (price < 0) {
-    throw new Error('Price cannot be negative');
-  }
+  const validPrice = !isNaN(price) ? Math.floor(price) : 0;
+  let points = 0;
 
-  let rewardPoints = 0;
-  if (price > 100) {
-    rewardPoints = (price - 100) * 2 + 50; // Rewards for prices above $100
-  } else if (price > 50) {
-    rewardPoints = price - 50; // Rewards for prices between $50 and $100
+  // Calculate rewards logic:
+  // - 2 points for every dollar spent over $100
+  // - 1 point for every dollar spent between $50 and $100
+  if (validPrice > 100) {
+    points += 2 * (validPrice - 100) + 50; // Add 50 points for the $50-$100 range
+  } else if (validPrice > 50) {
+    points += validPrice - 50; // 1 point for every dollar over $50
   }
-  rewardPoints = Math.floor(rewardPoints);
-  return rewardPoints;
+  return points;
 };
