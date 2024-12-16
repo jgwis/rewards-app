@@ -111,7 +111,8 @@ select:focus {
   border-radius: 5px;
   padding: 10px;
   font-size: 14px;
-  margin-top: 20px;
+  position: relative;
+  top: 25px;
 }
 
 /*Loader*/

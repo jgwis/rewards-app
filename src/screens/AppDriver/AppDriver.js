@@ -8,7 +8,7 @@ const AppDriver = () => {
     useFetchRewardsData();
 
   return (
-    <div className="wrapper">
+    <div className="wrapper container-fluid">
       <Header />
       <div className="customer-rewards-program">
         {error ? (
