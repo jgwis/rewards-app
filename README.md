@@ -130,16 +130,16 @@ Rewards Table: This table shows the total rewards for each customer, calculated 
 ## Screenshots
 
 1. Main Page - All Transactions
-![image](https://github.com/user-attachments/assets/0bce2f8c-83bc-46ad-b968-6ec6239cfe29)
+![image](https://github.com/user-attachments/assets/206cb690-7a6b-4d60-b7e2-71a0888c48ec)
 
 
 2. Main Page - Total Monthly Rewards (Customer Wise)
 
-![image](https://github.com/user-attachments/assets/42aafa9e-9a50-4434-b969-1821741e996f)
+![image](https://github.com/user-attachments/assets/e4dd5ba9-b4f7-467f-954e-33a77787d61c)
+
 
 3. Main Page - Total Rewards for Last Three Consecutive Months
-![image](https://github.com/user-attachments/assets/18d5ae34-44f1-4b55-9f0d-10ab4b98ce57)
-
+![image](https://github.com/user-attachments/assets/449d68ce-5f6a-4903-8095-d426035dc964)
 
 ## Testing
 This project includes unit tests for each component using Jest and React Testing Library.
@@ -147,7 +147,17 @@ Running Tests
 To run the tests, execute the following command in the terminal:
 npm test
 
+![image](https://github.com/user-attachments/assets/e95d0994-8f0d-4c1a-9b72-aca33236c44f)
+
+
 ## Errors and Troubleshooting
+1 **Loading State**
+
+![loading-state](https://github.com/user-attachments/assets/39807cca-ccc4-4f02-96f5-cb346602949d)
+2. **Error State**
+
+![error-state](https://github.com/user-attachments/assets/a865754d-7d02-4da3-9f55-3ee17c5073d7)
+![error-state1](https://github.com/user-attachments/assets/e592490f-01a0-4d59-b7e8-64e22918daa8)
 
 
 Error: Parsing error: This experimental syntax requires enabling one of the following parser plugin(s): "jsx", "flow", "typescript"
